@@ -20,19 +20,19 @@
 	for ($i = 1; $i < sizeof($arr_data); $i++) {
 		$a = explode(',', $arr_data[$i]);
 
-		$id = substr($a[0], strpos($a[0], ':') + 1);
-		$name = str_replace("\"", "", substr($a[1], strpos($a[1], ':') + 1));
-		$name = str_replace("\\", "", $name);
-		array_push($list_event, new Event($id, $name));
+		$event_id = substr($a[0], strpos($a[0], ':') + 1);
+		$event_name = str_replace("\"", "", substr($a[1], strpos($a[1], ':') + 1));
+		$event_name = str_replace("\\", "", $event_name);
+		array_push($list_event, new Event($event_id, $event_name));
 	}
 
-	$arr = array("name" => $name,
-		"class" => $class,
-		"temp" => $temp,
-		"true" => $true,
-		"wait" => $wait,
-		"img" => $img,
-		"list_event" => $list_event);
+	$arr = array('name' => $name,
+		'class' => $class,
+		'temp' => $temp,
+		'true' => $true,
+		'wait' => $wait,
+		'img' => $img,
+		'list_event' => $list_event);
 
 	$json = stripslashes(json_encode($arr, JSON_UNESCAPED_UNICODE));
 	echo $json;

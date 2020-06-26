@@ -1,11 +1,11 @@
 <?php 
 	class Event {
-		public $id;
-		public $name;
+		public $event_id;
+		public $event_name;
 
-		function __construct($id, $name) {
-			$this->id = $id;
-			$this->name = $name;
+		function __construct($event_id, $event_name) {
+			$this->event_id = $event_id;
+			$this->event_name = $event_name;
 		}
 	}
 ?>
