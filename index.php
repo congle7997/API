@@ -6,7 +6,6 @@
 	$id = $_GET['id'];
 	$page = file_get_html($url.$id.'.html');
 	$status = substr($page, strpos($page, 'stt:"') + 5, 3);
-
 	if ($status == 'err') {
 		$json = '{"status" : "err"}';
 		die($json);
